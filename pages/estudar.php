@@ -1,6 +1,6 @@
 <div class="arrow-area">
     <div class="arrow">
-        <img data-proxima="-1" class="arrow-left" src="http://localhost/gerenciador/images/arrow_icon.png"/>
+        <img data-proxima="-1" class="arrow-left" src="<?php echo URL;?>images/arrow_icon.png"/>
         Materia Anterior
     </div>
     <div class="pomodoros-estudados">
@@ -10,7 +10,7 @@
     </div>
     <div class="arrow">
         Próxima Materia
-        <img data-proxima="1" class="arrow-right" src="http://localhost/gerenciador/images/arrow_icon.png"/>
+        <img data-proxima="1" class="arrow-right" src="<?php echo URL;?>images/arrow_icon.png"/>
     </div>
 </div>
 <div class="materia-content">

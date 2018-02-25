@@ -1,6 +1,6 @@
 <?php if(!empty($add)):?>
     
-    <a href="http://localhost/gerenciador/gerenciar.php">Voltar</a><br/><br/>
+    <a href="<?php echo URL;?>gerenciar.php">Voltar</a><br/><br/>
 
     <form method="POST">
         <input type="hidden" name="opcao" value="1"/>
@@ -16,7 +16,7 @@
 <?php elseif(!empty($edit)):?>
 
     <div class="container">
-        <a href="http://localhost/gerenciador/gerenciar.php">Voltar</a><br/><br/>
+        <a href="<?php echo URL;?>gerenciar.php">Voltar</a><br/><br/>
         <div class="form-area">
             <form class="form-edit" method="POST">
                 <div class="form-left">
@@ -71,19 +71,19 @@
 
 <!-- menu topo -->
 <div class="topo">
-    <a href="http://localhost/gerenciador/gerenciar.php?add=true">Adicionar Materia</a>
+    <a href="<?php echo URL;?>gerenciar.php?add=true">Adicionar Materia</a>
 </div>
 
 <ul class="materias">
 <?php if(!empty($data)):?>
     <?php foreach($data as $materia):?>
         <!--botao deletar-->
-        <a class="btn-delete" href="http://localhost/gerenciador/gerenciar.php?delete=<?php echo $materia['id'];?>">
-            <img src="http://localhost/gerenciador/images/excluir.png"/>
+        <a class="btn-delete" href="<?php echo URL;?>gerenciar.php?delete=<?php echo $materia['id'];?>">
+            <img src="<?php echo URL;?>images/excluir.png"/>
         </a>
 
         <!-- botao editar -->
-        <li><a href="http://localhost/gerenciador/gerenciar.php?edit=<?php echo $materia['id'];?>"><?php echo $materia['nome'];?></a></li> 
+        <li><a href="<?php echo URL;?>gerenciar.php?edit=<?php echo $materia['id'];?>"><?php echo $materia['nome'];?></a></li> 
     <?php endforeach;?>
 <?php endif;?>
 </ul>

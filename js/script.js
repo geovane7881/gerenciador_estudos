@@ -1,27 +1,4 @@
-/*
-$(function() {
-
-    //change color of last button clicked
-    button = $('#'+localStorage.button);
-    button.removeClass('btn-primary');
-    button.addClass('btn-danger');
-
-    //get the button clicked
-    $('.ciclo a').bind('click', function(e) {
-        e.preventDefault();
-        localStorage.button = $(this).attr('id');
-        window.location = $(this).attr('href');
-    });
-
-
-    $('.menu').hover(function() {
-        $('.menu li').show();
-    }, function() {
-        $('.menu li').hide();
-    });
-});
-
-*/
+var URL = 'http://estudar.pc/';
 
 $(function() {
     $('.pomodoros-estudados input').bind('click', function() {
@@ -43,7 +20,7 @@ $(function() {
         $.ajax({
             method: 'POST',
             data: {id_materia: id_materia, pomodoro : id},
-            url: 'http://localhost/gerenciador/estudar.php'
+            url: URL+'estudar.php'
 
             /*
             success() {
@@ -60,7 +37,7 @@ $(function() {
         $.ajax({
             method: 'POST',
             data: {proxima_materia: proxima},
-            url: 'http://localhost/gerenciador/estudar.php',
+            url: URL+'estudar.php',
 
             success() {
                 window.location.reload();

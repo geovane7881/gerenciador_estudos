@@ -1,5 +1,6 @@
 <?php
 
+require_once 'config.php';
 require 'functions.php';
 require 'functions/gerenciar_materia_functions.php';
 
@@ -21,7 +22,7 @@ if(!empty($_POST['opcao'])) {
 
         case 1:
             addMateria($ordem, $qtd_pomodoros, $nome);
-            header('Location: http://localhost/gerenciador/gerenciar.php');
+            header('Location: '.URL.'gerenciar.php');
             break;
 
         case 2:
@@ -29,7 +30,7 @@ if(!empty($_POST['opcao'])) {
             $id_materia = addslashes($_POST['id']);
 
             editMateria($id_materia, $ordem, $qtd_pomodoros, $nome, $nome_topico_array, $links_array);
-            header('Location: http://localhost/gerenciador/gerenciar.php');
+            header('Location: '.URL.'gerenciar.php');
             break;
 
     }
@@ -55,7 +56,7 @@ if(!empty($_GET['add'])) {
 } else if(!empty($_GET['delete'])) {
     $id_materia = addslashes($_GET['delete']);
     deleteMateria($id_materia);
-    header('Location: http://localhost/gerenciador/gerenciar.php');
+    header('Location: '.URL.'gerenciar.php');
 
 } else {
 

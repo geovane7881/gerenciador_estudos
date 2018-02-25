@@ -1,6 +1,6 @@
 <?php
 
-require 'config.php';
+//require 'config.php';
 
 //pega materia para estudar agora (status = 1)
 //pega qtd_pomodoro, titulo, topicos, id

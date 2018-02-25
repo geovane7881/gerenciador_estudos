@@ -1,5 +1,6 @@
 <?php 
 
+require_once 'config.php';
 require 'functions.php';
 require 'functions/materia_functions.php';
 

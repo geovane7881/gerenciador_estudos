@@ -1,5 +1,7 @@
 <?php
 
+define('URL', 'http://estudar.pc/');
+
 $host = 'localhost';
 $dbname = 'meu_gerenciador';
 $dbuser = 'root';
