@@ -100,32 +100,21 @@ function editMateria($id_materia, $ordem, $qtd_pomodoros, $nome, $nome_topico_ar
         for($i = 0; $i<count($nome_topico_array); $i++) {
             $sql.= "(?, ?, ?), ";
             //coloca dados na string
-            $data_passed.=$id_materia.',';
-            $data_passed.=$nome_topico_array[$i].',';
-            $data_passed.= $links_array[$i].',';
+            //trocando separador para ###, para nao dar erro no explode
+            $data_passed.=$id_materia.'###';
+            $data_passed.=$nome_topico_array[$i].'###';
+            $data_passed.= $links_array[$i].'###';
         }
 
         //remove ultimas virgulas
         $sql = rtrim($sql, ', ');
-        $data_passed = rtrim($data_passed, ',');
 
+        //dados da query
+        $data_passed = rtrim($data_passed, '###');
+        $array_dados = explode('###',$data_passed);
         //executa query com os dados
         $sql = $pdo->prepare($sql);
-        $sql->execute(explode(',',$data_passed));
-
-
-        //binds
-        /*
-        $sql = $pdo->prepare($sql);
-        for($i = 0; $i<count($nome_topico_array); $i++) {
-            $sql->bindValue(':id_materia', $id_materia);
-            $sql->bindValue(':nome', $nome_topico_array[$i]);
-            $sql->bindValue(':links', $links_array[$i]);
-        }
-
-        //executa
-        $sql->execute();
-         */
+        $sql->execute($array_dados);
 
     }
 
